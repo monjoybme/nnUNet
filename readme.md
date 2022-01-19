@@ -371,7 +371,7 @@ Once all models are trained, use the following
 command to automatically determine what U-Net configuration(s) to use for test set prediction:
 
 ```bash
-nnUNet_find_best_configuration -m 2d 3d_fullres 3d_lowres 3d_cascade_fullres -t XXX --strict
+nnUNet_find_best_configuration -m 2d 3d_fullres 3d_lowres 3d_cascade_fullres -t XXX 
 ```
 
 (all 5 folds need to be completed for all specified configurations!)
