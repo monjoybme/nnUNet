@@ -48,8 +48,11 @@ c. run ```nnUNet_plan_and_preprocess -t 055 --verify_dataset_integrity``` on the
 **Convert `nii` to `nii.gz`** This needs to be done on MATLAB. Follow the below instructions. 
 
 i. Open [user@biowulf ~]$ sinteractive
+
 ii. [user@cn1234 ~]$ module load matlab
+
 iii. [user@cn1234 ~]$ matlab
+
 iv. gzip('*.nii') # all `nii` files belong to the folder will be converted into compress `nii.gz` file
 
 
