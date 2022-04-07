@@ -12,7 +12,9 @@
 
 ```conda activate project2```
 
-4. Set paths:
+4. Create three EMPTY folders with names "**nnUNet_raw_data_base**", "**nnUNet_preprocessed**" and "**nnUNet_trained_models**". This folders should be at the same place where ```nnUNet``` folder (pasted before) is located.  
+
+5. Set paths:
 
 ```export nnUNet_raw_data_base="/data/saham2/Esophagus_Segmentation/nnU-Net_6jan2022/nnUNet_raw_data_base/"``` [Path will change]
 
@@ -20,7 +22,7 @@
 
 ```export RESULTS_FOLDER="/data/saham2/Esophagus_Segmentation/nnU-Net_6jan2022/nnUNet_trained_models/"``` [Path will change]
 
-5. libstdc++.so.6: version `CXXABI_1.3.9' not found. This problem can be solved by setting conda llib path like below. Type below code on the same terminal.
+6. libstdc++.so.6: version `CXXABI_1.3.9' not found. This problem can be solved by setting conda llib path like below. Type below code on the same terminal.
 
 ```export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/data/saham2/conda/lib``` [Fixed path no changes are required]  [source: https://github.com/AllenDowney/ThinkStats2/issues/92].  
 
@@ -32,15 +34,11 @@ N.B.: Follow instructions from this paper https://github.com/MIC-DKFZ/nnUNet/blo
 
 =========================================================================================
 
-1. **First**, copy ```/data/saham2/Esophagus_Segmentation/nnUNet_modifiedSgThor_Data_21March2022/nnUNet/``` in a new dictory. As I don't want to diturb the existing folder. 
-
 2. **B. DATSET PREPARATION on SegTHOR data**
 
-a. Create three EMPTY folders with names "**nnUNet_raw_data_base**", "**nnUNet_preprocessed**" and "**nnUNet_trained_models**". This folders should be at the same place where ```nnUNet``` folder (pasted before) is situated.  
+a. Run the script ```Task055_SegTHOR.py``` located at the ```https://github.com/monjoybme/nnUNet/blob/dev/nnunet/dataset_conversion/Task055_SegTHOR.py```. Check the ```Task055_SegTHOR.py``` file path based on the location where you saved "nnUNet" file. So, if we ignore based location, the path will be ```**base_location+/+ Jaewon_data_Segmentation7April2022/nnUNet/nnunet/dataset_conversion/Task055_SegTHOR.py**```. You just need to set the location of your raw data. Script only applicable for SegTHOR type of data. Change the script littlebit for other dataset. 
 
-b. Run the script ```Task055_SegTHOR.py``` located at the ```https://github.com/monjoybme/nnUNet/blob/dev/nnunet/dataset_conversion/Task055_SegTHOR.py```. You just need to set the location of your raw data. Script only applicable for SegTHOR data. Change the script littlebit for other dataset. 
-
-c. run ```nnUNet_plan_and_preprocess -t 055 --verify_dataset_integrity``` on the Biowulf terminal
+b. run ```nnUNet_plan_and_preprocess -t 055 --verify_dataset_integrity``` on the Biowulf terminal
 
 
 ** Additional Instructions for data preparation**
@@ -54,7 +52,6 @@ ii. [user@cn1234 ~]$ module load matlab
 iii. [user@cn1234 ~]$ matlab
 
 iv. gzip('*.nii') # all `nii` files belong to the folder will be converted into compress `nii.gz` file
-
 
 
 3. **MODEL TRAINING**
