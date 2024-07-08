@@ -10,7 +10,7 @@
 
 ```source /data/saham2/conda/etc/profile.d/conda.sh```
 
-```conda activate project2``` or ```conda activate histology```
+```conda activate newseg```  for GPU access.
 
 4. Create three EMPTY folders with names "**nnUNet_raw_data_base**", "**nnUNet_preprocessed**" and "**nnUNet_trained_models**". This folders should be at the same place where ```nnUNet``` folder (pasted before) is located.  
 
